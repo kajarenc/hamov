@@ -84,6 +84,4 @@ def handle_end(request_dict):
                 data_for_request['apartment'] = ''
                 data_for_request['address_details'] = 'Loft'
                 data_for_request['comments'] = ''
-                print(json.dumps(data_for_request))
-                # headers = {'Content-type': 'application/json'}
                 requests.post('http://d4bb476b.ngrok.io/orders', json=data_for_request)
