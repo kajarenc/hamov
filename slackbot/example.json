@@ -1,0 +1,13 @@
+{
+  'channel_name': 'directmessage',
+  'command': '/start',
+  'user_name': 'kajarenc',
+  'channel_id': 'D8ZUQDHMK',
+  'user_id': 'U8Z5TN68G',
+  'text': 'link',
+  'team_id': 'T8Z5TN66L',
+  'response_url': 'https://hooks.slack.com/commands/T8Z5TN66L/305769776035/hz6AplpTd1rFbH4UWabwbT0L',
+  'team_domain': 'hamov-demo',
+  'token': 'vkuKwE33tG4JN3Yt41a7WgsY',
+  'trigger_id': '305219088992.305197754224.d573296ea22ebe38de23b85b2ae5c97e'
+}

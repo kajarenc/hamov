@@ -3,8 +3,8 @@ from flask import Flask
 from flask import Flask, request, make_response, render_template
 import json
 
-from flask import Flask, request, make_response, Response
-from bot_commands import handle_start
+from flask import Flask, request, make_response, jsonify, Response
+from bot_commands import handle_start, handle_order
 import os
 import json
 
@@ -20,10 +20,27 @@ def hello_world():
 
 @app.route("/start", methods=["POST"])
 def start():
-    # request_data = json.loads(request.data)
     data = request.form.to_dict()
     handle_start(data)
-    return make_response("OK!", 200, {"content_type": "application/json"})
+    return jsonify({
+        "response_type": "in_channel",
+        'text': 'OK, Let\'s start'
+    })
+
+
+@app.route("/order", methods=["POST"])
+def order():
+    data = request.form.to_dict()
+    if handle_order(data):
+        return jsonify({
+            "response_type": "in_channel",
+            'text': 'GOOD!'
+        })
+    else:
+        return jsonify({
+            "response_type": "in_channel",
+            'text': 'Something went wrong! :('
+        })
 
 
 if __name__ == '__main__':
