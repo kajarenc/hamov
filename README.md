@@ -1,2 +1,0 @@
-# homov
-Hamov bot
